@@ -118,7 +118,7 @@ logTitle "上传文件"
 
 file_name=${file##*/}
 
-execCommand "curl -s -o /dev/null -w '%{http_code}' \
+execCommand "curl --progress-bar -o /dev/null -w '%{http_code}' \
 --form-string 'key=${key}' \
 --form-string 'signature=${signature}' \
 --form-string 'x-cos-security-token=${x_cos_security_token}' \
