@@ -140,6 +140,9 @@ for i in {1..60}; do
     [[ "${result}" =~ \"code\":([0-9]+) ]] && code=`echo ${BASH_REMATCH[1]}`
     if [ $code -eq 0 ]; then
         echo $result
+        execCommand "curl -s https://www.pgyer.com/apiv2/app/setNewestVersion \
+        --form-string '_api_key=${api_key} \
+        --form-string 'buildKey=${key}'"
         break
     else
         sleep 1
