@@ -141,7 +141,7 @@ for i in {1..60}; do
     if [ $code -eq 0 ]; then
         echo $result
         execCommand "curl -s https://www.pgyer.com/apiv2/app/setNewestVersion \
-        --form-string '_api_key=${api_key} \
+        --form-string '_api_key=${api_key}' \
         --form-string 'buildKey=${key}'"
         break
     else
